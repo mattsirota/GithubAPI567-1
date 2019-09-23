@@ -1,0 +1,23 @@
+import requests
+import json
+
+'''
+Retrieving a user's repositories
+'''
+
+def repoName(userID):
+    commitCount = 0
+    getRepo = requests.get(f"https://api.github.com/users/{userID}/repos") 
+    repoData = getRepo.json() #convert to JSON obj
+    for entry in repoData:
+        name = entry['name']
+
+        getCommits = requests.get(f"https://api.github.com/repos/{userID}/{name}/commits")
+        commitData = getCommits.json()
+        for entry in commitData:
+            if entry["commit"]:
+                commitCount += 1
+        print(name, commitCount)
+        print('Repo: {} Number of commits: {}').format(name,commitCount)
+
+repoName('ruthylevi')
