@@ -1,4 +1,8 @@
 # GithubAPI567: Homework 04a
+
+[![build status of master](https://travis-ci.org/ruthylevi/GithubAPI567.svg?branch=master)](https://travis-ci.org/ruthylevi/GithubAPI567)
+
+
 <i>Develop with the Perspective of the Tester in mind</I>
 
 **Write a description of what you thought about when you were designing the code.  What did *you* think was important to do to make it easy to test the program.  What are some of the challenges that you faced when testing this assignment.**
