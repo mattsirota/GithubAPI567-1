@@ -15,13 +15,8 @@ def gitData(userID):
         for entry in commitData:
             if entry["commit"]:
                 commitCount += 1
-        # print(name, commitCount)
-        # return(f"Repo: {name} | Number of commits: {commitCount}")
-        dict['Repo Name'] = name
-        dict['Number of commits'] = commitCount
-        print(dict)
+        dict[name] = commitCount
     return dict
-        #store data in an array or dict
 
 class TestGitData(unittest.TestCase):
     # define multiple sets of tests as functions with names that begin
@@ -29,11 +24,11 @@ class TestGitData(unittest.TestCase):
         self.assertTrue(len(gitData("ruthylevi")) > 0)
 
     def test_repo(self):
-        pass 
+        self.assertEquals(gitData('Asupkay')['Raffler'], 465)
+         
     def test_commitCount(self):
-        pass
+        self.assertEquals(gitData('Zildj')['CXIA'], 9)
 
 if __name__ == '__main__':
     print('Running unit tests')
     unittest.main()
-    gitData('ruthylevi')
