@@ -1,7 +1,5 @@
 import requests
 import json
-import unittest
-from unittest.mock import Mock, patch
 
 def gitData(userID):
     commitCount = 0
@@ -17,19 +15,7 @@ def gitData(userID):
             if entry["commit"]:
                 commitCount += 1
         dict[name] = commitCount
-    return dict
-
-class TestGitData(unittest.TestCase):
-    # define multiple sets of tests as functions with names that begin
-    def test_gitData(self):
-        self.assertTrue(len(gitData("ruthylevi")) > 0)
-
-    def test_repo(self):
-        self.assertEquals(gitData('Asupkay')['Raffler'], 465)
-         
-    def test_commitCount(self):
-        self.assertEquals(gitData('Zildj')['CXIA'], 9)
+    print(dict)
 
 if __name__ == '__main__':
-    print('Running unit tests')
-    unittest.main()
+    gitData('ruthylevi')
