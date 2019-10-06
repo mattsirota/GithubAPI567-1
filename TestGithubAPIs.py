@@ -6,19 +6,19 @@ import GithubAPIs
 class TestGithubAPI(unittest.TestCase):
     '''
     This class mock out all of the service calls 
-    in GithubAPI.py using the python mock module
+    in GithubAPIs.py using the python mock module
     '''
-    @mock.patch('GithubAPI.get_repos', return_value = ['ruthylevi.github.io', 'Mock'])
-    @mock.patch('GithubAPI.get_commits', return_value = 2)    
+    @mock.patch('GithubAPIs.get_repos', return_value = ['ruthylevi.github.io', 'Mock'])
+    @mock.patch('GithubAPIs.get_commits', return_value = 2)    
     def test_commitCount(self, mockedRequest):
         self.assertEquals(GithubAPIs.commit_count('Mock')['Mock'], 2)
 
-    @mock.patch('GithubAPI.requests.get')
+    @mock.patch('GithubAPIs.requests.get')
     def test_get_repos(self, mockedRequest):
         mockedRequest.return_value.json = [{'name': 'ruthylevi.github.io'},{'name': 'Mock'}]
         self.assertIn('ruthylevi.github.io', GithubAPIs.get_repos('Mock'))
     
-    @mock.patch('GithubAPI.requests.get')
+    @mock.patch('GithubAPIs.requests.get')
     def test_get_commits(self, mockedRequest):
         mockedRequest.return_value.json.return_value = [{'commit': 'first_commit'},{'commit': 'second_commit'}]
         commits = GithubAPIs.get_commits('Mock', 'Mock_Repo')
