@@ -1,7 +1,7 @@
 import unittest
 import json
 from unittest import mock
-import GithubAPI
+import GithubAPIs
 
 class TestGithubAPI(unittest.TestCase):
     '''
