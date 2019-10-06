@@ -12,6 +12,7 @@ class TestGithubAPI(unittest.TestCase):
     @mock.patch('GithubAPIs.get_commits', return_value = 2)    
     def test_commitCount(self, mockA, mockB):
         self.assertEquals(GithubAPIs.commit_count('Mock')['Mock'], 2)
+        self.assertIn('Mock', GithubAPIs.getReposAndCommits('Mock'))
 
     @mock.patch('GithubAPIs.requests.get')
     def test_get_repos(self, mockedRequest):
