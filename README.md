@@ -1,3 +1,5 @@
+[![build status of HW05a_Mocking](https://travis-ci.org/ruthylevi/GithubAPI567.svg?branch=HW05a_Mocking)](https://travis-ci.org/ruthylevi/GithubAPI567)
+
 # GithubAPI567: Homework 04a
 <i>Develop with the Perspective of the Tester in mind</I>
 
