@@ -7,7 +7,7 @@ def commit_count(userID):
     for entry in repos:
         repoName = entry["name"]
         dict[repoName] = get_commits(userID, repoName)
-    print(dict)
+    return dict
         
 def get_repos(userID):
     getRepo = requests.get(f"https://api.github.com/users/{userID}/repos").json()
